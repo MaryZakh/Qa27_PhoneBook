@@ -19,7 +19,7 @@ public class AddNewContactTests extends TestBase {
         }
     }
 
-    @Test
+    @Test(invocationCount = 5)
     public void addContactSuccessAllFields() {
 
         int i = (int) (System.currentTimeMillis() / 1000) % 3600;
@@ -32,6 +32,7 @@ public class AddNewContactTests extends TestBase {
                 .address("NY")
                 .description("all fields")
                 .build();
+        logger.info("Test run with data:--->" + contact.toString());
 
         app.getHelperContact().openContactForm();
         app.getHelperContact().fillContactForm(contact);
@@ -57,6 +58,7 @@ public class AddNewContactTests extends TestBase {
                 .email("stark"+i+"@gmail.com")
                 .address("NY")
                 .build();
+        logger.info("Test run with data:--->" + contact.toString());
 
         app.getHelperContact().openContactForm();
         app.getHelperContact().fillContactForm(contact);
@@ -77,6 +79,7 @@ public class AddNewContactTests extends TestBase {
             .address("NY")
             .description("empty name")
             .build();
+    logger.info("Test run with data:--->" + contact.toString());
 
     app.getHelperContact().openContactForm();
     app.getHelperContact().fillContactForm(contact);
@@ -96,6 +99,7 @@ public class AddNewContactTests extends TestBase {
                 .address("")
                 .description("empty address")
                 .build();
+        logger.info("Test run with data:--->" + contact.toString());
 
         app.getHelperContact().openContactForm();
         app.getHelperContact().fillContactForm(contact);
@@ -114,8 +118,8 @@ public class AddNewContactTests extends TestBase {
                 .email("stark@gmail.com")
                 .address("NY")
                 .description("empty last name")
-
                 .build();
+        logger.info("Test run with data:--->" + contact.toString());
 
         app.getHelperContact().openContactForm();
         app.getHelperContact().fillContactForm(contact);
@@ -135,8 +139,8 @@ public class AddNewContactTests extends TestBase {
                 .email("stark@gmail.com")
                 .address("NY")
                 .description("empty phone")
-
                 .build();
+        logger.info("Test run with data:--->" + contact.toString());
 
         app.getHelperContact().openContactForm();
         app.getHelperContact().fillContactForm(contact);
@@ -158,6 +162,7 @@ public class AddNewContactTests extends TestBase {
                 .address("NY")
                 .description("wrong email")
                 .build();
+        logger.info("Test run with data:--->" + contact.toString());
 
         app.getHelperContact().openContactForm();
         app.getHelperContact().fillContactForm(contact);

@@ -18,8 +18,7 @@ public class RegistrationTests extends TestBase{
     public void registrationSuccess(){
         int i = (int) ((System.currentTimeMillis()/1000)%3600);
         User user = new User().withEmail("won"+i+"@gmail.com").withPassword("Wwon12345$");
-
-
+        logger.info("Test run with data:--->" + user.toString());
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegistration();
@@ -30,6 +29,7 @@ public class RegistrationTests extends TestBase{
     @Test(description = "Bug report #23456 Fixed")
     public void registrationWrongEmail(){
         User user = new User().withEmail("wongmail.com").withPassword("Wwon12345$");
+        logger.info("Test run with data:--->" + user.toString());
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegistration();
@@ -39,6 +39,7 @@ public class RegistrationTests extends TestBase{
     @Test
     public void registrationWrongPassword(){
         User user = new User().withEmail("won@gmail.com").withPassword("Wwon12");
+        logger.info("Test run with data:--->" + user.toString());
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegistration();
@@ -48,6 +49,7 @@ public class RegistrationTests extends TestBase{
     @Test
     public void registrationExistsUser(){
         User user = new User().withEmail("mara@gmail.com").withPassword("Mmar123456$");
+        logger.info("Test run with data:--->" + user.toString());
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm(user);
         app.getHelperUser().submitRegistration();

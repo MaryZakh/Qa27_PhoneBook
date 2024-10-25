@@ -16,8 +16,8 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
-src/test/screenshots
-
+*.png
+*.log
 
 ### Eclipse ###
 .apt_generated
