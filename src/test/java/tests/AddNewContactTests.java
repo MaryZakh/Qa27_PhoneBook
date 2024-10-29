@@ -124,7 +124,7 @@ public class AddNewContactTests extends TestBase {
 
     @Test(dataProvider = "contactWrongPhone",dataProviderClass = DataProviderContact.class)
     public void addNewContactWrongPhone(Contact contact) {
-       
+
         logger.info("Test run with data:--->" + contact.toString());
 
         app.getHelperContact().openContactForm();
