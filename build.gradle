@@ -52,6 +52,13 @@ task qa (type:Test){
         useTestNG(){
             suites 'src/test/resources/scope.xml'
         }
+
+        if(project.hasProperty('browser')){
+            systemProperty 'browser',
+
+                    "${browser}"
+
+        }
     }
 
     task team(type: Test){
